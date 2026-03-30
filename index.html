@@ -36,7 +36,7 @@
         <section class="bg-white rounded-xl shadow-sm border border-slate-200 p-4">
             <div class="flex gap-3">
                 <div class="w-10 h-10 rounded-lg bg-blue-100 text-blue-600 shrink-0 flex items-center justify-center font-bold">C</div>
-                <textarea class="grow text-slate-700 outline-none resize-none pt-2 placeholder-slate-400 text-sm font-medium" placeholder="Share your interview experience..." rows="2"></textarea>
+                <textarea class="grow text-slate-700 outline-none resize-none pt-2 placeholder-slate-400 text-sm font-medium" placeholder="Share your experience..." rows="2"></textarea>
             </div>
             <footer class="flex justify-end mt-3 border-t border-slate-100 pt-3">
                 <button class="bg-blue-600 text-white px-6 py-2 rounded-lg text-sm font-bold active:scale-95 transition-all shadow-md">Post</button>
@@ -48,15 +48,25 @@
             <input type="text" placeholder="Search rounds or companies..." class="w-full bg-white border border-slate-200 rounded-lg py-2.5 pl-11 pr-4 text-sm outline-none focus:border-blue-500 shadow-sm transition-all">
         </section>
 
-        
-
         <section class="space-y-4">
+            
 
             <article class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
-
+                <header class="px-4 py-4 border-b border-slate-100">
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 rounded-[14px] bg-[#3b66f5] text-white flex items-center justify-center text-lg font-bold shadow-sm">P</div>
+                        <div class="flex flex-col">
+                            <h3 class="font-bold text-[#2d3748] text-[15px] leading-tight">Plaban Kumar Nath</h3>
+                            <p class="text-[13px] text-[#a0aec0] font-medium mt-1">Member • 29/03/2026</p>
+                        </div>
+                        <div class="ml-auto">
+                             
+                        </div>
+                    </div>
+                </header>
 
                 <div class="p-4 space-y-4">
-
+                    
                     <div class="flex gap-4"><span class="text-emerald-500 font-black text-sm">Q</span><p class="text-sm text-slate-500 leading-relaxed font-medium">Used hashmap to store visited numbers and checked complement in $O(n)$ time.</p></div>
 
                     <footer class="flex items-center gap-6 pt-3 border-t border-slate-50 text-slate-400 text-xs font-bold">
@@ -66,77 +76,19 @@
 
                     <section id="commentArea1" class="hidden-comments fade-in space-y-4 pt-4 border-t border-slate-100 mt-2">
                         <div class="flex items-center gap-2 bg-slate-50 border border-slate-200 rounded-lg p-1.5 pl-3 focus-within:bg-white transition-all">
-                            <input type="text" placeholder="Add a comment..." class="grow bg-transparent outline-none text-xs text-slate-600 py-1">
+                            <input type="text" placeholder="Add a comment..." class="grow bg-transparent outline-none text-xs text-slate-600 font-medium py-1">
                             <button class="bg-blue-600 text-white w-8 h-8 rounded-md flex items-center justify-center shadow-md active:scale-90 transition-transform"><i class="fa-solid fa-paper-plane text-[10px]"></i></button>
                         </div>
 
-                        <div class="space-y-4">
-                            <div class="flex gap-3 items-start group">
-                                <div class="w-8 h-8 shrink-0 rounded bg-gradient-to-tr from-orange-400 to-orange-600 text-white flex items-center justify-center font-bold text-[10px] shadow-sm">JD</div>
-                                <div class="grow space-y-1">
-                                    <div class="bg-slate-50 border border-slate-100 rounded-2xl rounded-tl-none p-3 group-hover:bg-slate-100/50 transition-colors">
-                                        <div class="flex justify-between items-center mb-1">
-                                            <h5 class="font-bold text-[10px] text-slate-900 tracking-tight">JANE DOE</h5>
-                                            <span class="text-[9px] text-slate-400 font-medium tracking-tight">2h ago</span>
-                                        </div>
-                                        <p class="text-xs text-slate-600 leading-normal font-medium">Standard approach, works every time! Did you use a single pass?</p>
-                                    </div>
-                                    <div class="flex gap-4 ml-1 text-[9px] font-bold text-slate-400 uppercase tracking-tighter">
-                                        
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="flex gap-3 items-start group">
-                                <div class="w-8 h-8 shrink-0 rounded bg-gradient-to-tr from-emerald-400 to-emerald-600 text-white flex items-center justify-center font-bold text-[10px] shadow-sm">SM</div>
-                                <div class="grow space-y-1">
-                                    <div class="bg-slate-50 border border-slate-100 rounded-2xl rounded-tl-none p-3 group-hover:bg-slate-100/50 transition-colors">
-                                        <div class="flex justify-between items-center mb-1">
-                                            <h5 class="font-bold text-[10px] text-slate-900 tracking-tight">STEVE MILLER</h5>
-                                            <span class="text-[9px] text-slate-400 font-medium tracking-tight">1h ago</span>
-                                        </div>
-                                        <p class="text-xs text-slate-600 leading-normal font-medium">I think $O(1)$ space is the main focus for this during interviews.</p>
-                                    </div>
-                                    <div class="flex gap-4 ml-1 text-[9px] font-bold text-slate-400 uppercase tracking-tighter">
-                                        
-                                       
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                </div>
-            </article>
-
-            <article class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
-               
-
-                <div class="p-4 space-y-4">
-                    
-                    <div class="flex gap-4"><span class="text-emerald-500 font-black text-sm">Q</span><p class="text-sm text-slate-500 leading-relaxed font-medium">Discussed iterative vs recursive approaches. Optimized for space by using a three-pointer iterative method.</p></div>
-
-                    <footer class="flex items-center gap-6 pt-3 border-t border-slate-50 text-slate-400 text-xs font-bold">
-                        <button class="flex items-center gap-1.5 hover:text-blue-600 transition-colors"><i class="fa-regular fa-thumbs-up text-base"></i> 42</button>
-                        <button onclick="toggleComments('commentArea2')" class="flex items-center gap-1.5 hover:text-blue-600 transition-colors"><i class="fa-regular fa-comment text-base"></i> 1 Comment</button>
-                    </footer>
-
-                    <section id="commentArea2" class="hidden-comments fade-in space-y-4 pt-4 border-t border-slate-100 mt-2">
-                        <div class="flex items-center gap-2 bg-slate-50 border border-slate-200 rounded-lg p-1.5 pl-3 focus-within:bg-white transition-all">
-                            <input type="text" placeholder="Add a comment..." class="grow bg-transparent outline-none text-xs text-slate-600 py-1">
-                            <button class="bg-blue-600 text-white w-8 h-8 rounded-md flex items-center justify-center shadow-md active:scale-90 transition-transform"><i class="fa-solid fa-paper-plane text-[10px]"></i></button>
-                        </div>
                         <div class="flex gap-3 items-start group">
-                            <div class="w-8 h-8 shrink-0 rounded bg-gradient-to-tr from-purple-400 to-purple-600 text-white flex items-center justify-center font-bold text-[10px] shadow-sm">RK</div>
+                            <div class="w-8 h-8 shrink-0 rounded-[10px] bg-orange-500 text-white flex items-center justify-center font-bold text-[10px]">JD</div>
                             <div class="grow space-y-1">
-                                <div class="bg-slate-50 border border-slate-100 rounded-2xl rounded-tl-none p-3 transition-colors group-hover:bg-slate-100/50">
+                                <div class="bg-slate-50 border border-slate-100 rounded-2xl rounded-tl-none p-3 group-hover:bg-slate-100/50 transition-colors">
                                     <div class="flex justify-between items-center mb-1">
-                                        <h5 class="font-bold text-[10px] text-slate-900 tracking-tight">RAHUL K</h5>
-                                        <span class="text-[9px] text-slate-400 font-medium tracking-tight">30m ago</span>
+                                        <h5 class="font-bold text-[10px] text-slate-900 tracking-tight">JANE DOE</h5>
+                                        <span class="text-[9px] text-slate-400 font-medium tracking-tight">2h ago</span>
                                     </div>
-                                    <p class="text-xs text-slate-600 leading-normal font-medium">Did they ask you to do it in-place or return a new list?</p>
-                                </div>
-                                <div class="flex gap-4 ml-1 text-[9px] font-bold text-slate-400 uppercase tracking-tighter">
-                                    
+                                    <p class="text-xs text-slate-600 leading-normal font-medium">Standard approach, works every time!</p>
                                 </div>
                             </div>
                         </div>
@@ -151,18 +103,13 @@
         <button class="flex flex-col items-center px-3 text-slate-400"><i class="fa-solid fa-comment-dots text-lg"></i><span class="text-[9px] mt-1 font-bold uppercase">QA</span></button>
         <button class="flex flex-col items-center px-3 text-slate-400"><i class="fa-solid fa-building text-lg"></i><span class="text-[9px] mt-1 font-bold uppercase">Job</span></button>
         <button class="flex flex-col items-center px-3 text-slate-400"><i class="fa-solid fa-code text-lg"></i><span class="text-[9px] mt-1 font-bold uppercase">Hacks</span></button>
-        <button class="flex flex-col items-center px-3 text-slate-400"><i class="fa-solid fa-book-open text-lg"></i><span class="text-[9px] mt-1 font-bold uppercase">Learn</span></button>
     </nav>
 
     <script>
         function toggleComments(id) {
             const el = document.getElementById(id);
             if (!el) return;
-            if (el.style.display === "block") {
-                el.style.display = "none";
-            } else {
-                el.style.display = "block";
-            }
+            el.style.display = (el.style.display === "block") ? "none" : "block";
         }
     </script>
 </body>
