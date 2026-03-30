@@ -3,149 +3,165 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Xshare | Premium Feed</title>
+    <title>Xshare | Interview Insights</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        body { background-color: #f1f5f9; font-family: 'Inter', sans-serif; -webkit-tap-highlight-color: transparent; }
-        .hidden-comments { display: none; }
-        .nav-active { color: #2563eb; }
+        body { background-color: #f8fafc; font-family: 'Inter', sans-serif; -webkit-tap-highlight-color: transparent; }
+        .nav-active { color: #2563eb; position: relative; }
         .nav-active::after {
-            content: ''; position: absolute; bottom: -8px; left: 50%; transform: translateX(-50%);
-            width: 5px; height: 5px; background: #2563eb; border-radius: 25%;
+            content: ''; position: absolute; bottom: -5px; left: 50%; transform: translateX(-50%);
+            width: 16px; height: 2px; background: #2563eb;
         }
+        .hidden-comments { display: none; }
+        .fade-in { animation: fadeIn 0.2s ease-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(-5px); } to { opacity: 1; transform: translateY(0); } }
     </style>
 </head>
 <body class="pb-24">
 
-    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200/60 px-5 py-4 flex items-center justify-between">
-        <div class="flex items-center gap-2.5">
-            <div class="bg-blue-600 p-2 rounded-xl text-white shadow-lg shadow-blue-200 flex items-center justify-center w-9 h-9">
-                <i class="fa-solid fa-xmark text-xl font-bold"></i>
+    <header class="sticky top-0 z-50 bg-white border-b border-slate-200 px-4 py-3 flex items-center justify-between">
+        <div class="flex items-center gap-2">
+            <div class="bg-blue-600 p-1.5 rounded-lg text-white flex items-center justify-center w-9 h-9 shadow-sm">
+                <span class="text-xl font-bold">X</span>
             </div>
-            <h1 class="text-xl font-extrabold text-slate-800 tracking-tight">Xshare</h1>
+            <h1 class="text-lg font-bold text-slate-800 tracking-tight text-nowrap">Xshare</h1>
         </div>
-        <div class="flex items-center gap-4 text-slate-400">
-            <button class="hover:text-blue-600 transition-colors"><i class="fa-solid fa-magnifying-glass text-lg"></i></button>
-            <button class="hover:text-blue-600 transition-colors"><i class="fa-regular fa-circle-user text-xl"></i></button>
-        </div>
+        <button aria-label="Profile"><i class="fa-regular fa-circle-user text-2xl text-slate-400"></i></button>
     </header>
 
-    <main class="max-w-md mx-auto p-4 space-y-6">
+    <main class="max-w-md mx-auto p-4 space-y-4">
 
-        <div class="bg-white rounded-2xl shadow-sm border border-slate-200/50 p-4 transition-all focus-within:shadow-md">
-            <div class="flex gap-4">
-                <div class="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-blue-600 text-white flex-shrink-0 flex items-center justify-center font-bold text-sm shadow-inner">
-                    C
-                </div>
-                <textarea class="w-full text-slate-700 outline-none resize-none pt-2 placeholder-slate-400 text-sm font-medium" 
-                          placeholder="What's on your mind, Plaban?" rows="2"></textarea>
+        <section class="bg-white rounded-xl shadow-sm border border-slate-200 p-4">
+            <div class="flex gap-3">
+                <div class="w-10 h-10 rounded-lg bg-blue-100 text-blue-600 shrink-0 flex items-center justify-center font-bold">C</div>
+                <textarea class="grow text-slate-700 outline-none resize-none pt-2 placeholder-slate-400 text-sm font-medium" placeholder="Share your interview experience..." rows="2"></textarea>
             </div>
-            <div class="flex justify-between items-center mt-3 border-t border-slate-50 pt-3">
-                <div class="flex gap-3 text-slate-400">
+            <footer class="flex justify-end mt-3 border-t border-slate-100 pt-3">
+                <button class="bg-blue-600 text-white px-6 py-2 rounded-lg text-sm font-bold active:scale-95 transition-all shadow-md">Post</button>
+            </footer>
+        </section>
+
+        <section class="relative">
+            <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 text-sm"></i>
+            <input type="text" placeholder="Search rounds or companies..." class="w-full bg-white border border-slate-200 rounded-lg py-2.5 pl-11 pr-4 text-sm outline-none focus:border-blue-500 shadow-sm transition-all">
+        </section>
+
+        
+
+        <section class="space-y-4">
+
+            <article class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+
+
+                <div class="p-4 space-y-4">
+
+                    <div class="flex gap-4"><span class="text-emerald-500 font-black text-sm">Q</span><p class="text-sm text-slate-500 leading-relaxed font-medium">Used hashmap to store visited numbers and checked complement in $O(n)$ time.</p></div>
+
+                    <footer class="flex items-center gap-6 pt-3 border-t border-slate-50 text-slate-400 text-xs font-bold">
+                        <button class="flex items-center gap-1.5 hover:text-blue-600 transition-colors"><i class="fa-regular fa-thumbs-up text-base"></i> 12</button>
+                        <button onclick="toggleComments('commentArea1')" class="flex items-center gap-1.5 hover:text-blue-600 transition-colors"><i class="fa-regular fa-comment text-base"></i> 2 Comments</button>
+                    </footer>
+
+                    <section id="commentArea1" class="hidden-comments fade-in space-y-4 pt-4 border-t border-slate-100 mt-2">
+                        <div class="flex items-center gap-2 bg-slate-50 border border-slate-200 rounded-lg p-1.5 pl-3 focus-within:bg-white transition-all">
+                            <input type="text" placeholder="Add a comment..." class="grow bg-transparent outline-none text-xs text-slate-600 py-1">
+                            <button class="bg-blue-600 text-white w-8 h-8 rounded-md flex items-center justify-center shadow-md active:scale-90 transition-transform"><i class="fa-solid fa-paper-plane text-[10px]"></i></button>
+                        </div>
+
+                        <div class="space-y-4">
+                            <div class="flex gap-3 items-start group">
+                                <div class="w-8 h-8 shrink-0 rounded bg-gradient-to-tr from-orange-400 to-orange-600 text-white flex items-center justify-center font-bold text-[10px] shadow-sm">JD</div>
+                                <div class="grow space-y-1">
+                                    <div class="bg-slate-50 border border-slate-100 rounded-2xl rounded-tl-none p-3 group-hover:bg-slate-100/50 transition-colors">
+                                        <div class="flex justify-between items-center mb-1">
+                                            <h5 class="font-bold text-[10px] text-slate-900 tracking-tight">JANE DOE</h5>
+                                            <span class="text-[9px] text-slate-400 font-medium tracking-tight">2h ago</span>
+                                        </div>
+                                        <p class="text-xs text-slate-600 leading-normal font-medium">Standard approach, works every time! Did you use a single pass?</p>
+                                    </div>
+                                    <div class="flex gap-4 ml-1 text-[9px] font-bold text-slate-400 uppercase tracking-tighter">
+                                        
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex gap-3 items-start group">
+                                <div class="w-8 h-8 shrink-0 rounded bg-gradient-to-tr from-emerald-400 to-emerald-600 text-white flex items-center justify-center font-bold text-[10px] shadow-sm">SM</div>
+                                <div class="grow space-y-1">
+                                    <div class="bg-slate-50 border border-slate-100 rounded-2xl rounded-tl-none p-3 group-hover:bg-slate-100/50 transition-colors">
+                                        <div class="flex justify-between items-center mb-1">
+                                            <h5 class="font-bold text-[10px] text-slate-900 tracking-tight">STEVE MILLER</h5>
+                                            <span class="text-[9px] text-slate-400 font-medium tracking-tight">1h ago</span>
+                                        </div>
+                                        <p class="text-xs text-slate-600 leading-normal font-medium">I think $O(1)$ space is the main focus for this during interviews.</p>
+                                    </div>
+                                    <div class="flex gap-4 ml-1 text-[9px] font-bold text-slate-400 uppercase tracking-tighter">
+                                        
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </article>
+
+            <article class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+               
+
+                <div class="p-4 space-y-4">
                     
-                </div>
-                <button class="bg-blue-600 text-white px-6 py-2 rounded-xl text-sm font-bold hover:bg-blue-700 active:scale-95 transition-all shadow-md shadow-blue-100">
-                    Post
-                </button>
-            </div>
-        </div>
+                    <div class="flex gap-4"><span class="text-emerald-500 font-black text-sm">Q</span><p class="text-sm text-slate-500 leading-relaxed font-medium">Discussed iterative vs recursive approaches. Optimized for space by using a three-pointer iterative method.</p></div>
 
-        <div class="bg-white rounded-3xl shadow-sm border border-slate-200/50 overflow-hidden">
-            <div class="p-5">
-                <div class="flex items-center justify-between mb-5">
-                    <div class="flex items-center gap-3">
-                        <div class="w-11 h-11 rounded-full bg-indigo-600 text-white flex items-center justify-center font-bold shadow-lg shadow-indigo-100">
-                            P
+                    <footer class="flex items-center gap-6 pt-3 border-t border-slate-50 text-slate-400 text-xs font-bold">
+                        <button class="flex items-center gap-1.5 hover:text-blue-600 transition-colors"><i class="fa-regular fa-thumbs-up text-base"></i> 42</button>
+                        <button onclick="toggleComments('commentArea2')" class="flex items-center gap-1.5 hover:text-blue-600 transition-colors"><i class="fa-regular fa-comment text-base"></i> 1 Comment</button>
+                    </footer>
+
+                    <section id="commentArea2" class="hidden-comments fade-in space-y-4 pt-4 border-t border-slate-100 mt-2">
+                        <div class="flex items-center gap-2 bg-slate-50 border border-slate-200 rounded-lg p-1.5 pl-3 focus-within:bg-white transition-all">
+                            <input type="text" placeholder="Add a comment..." class="grow bg-transparent outline-none text-xs text-slate-600 py-1">
+                            <button class="bg-blue-600 text-white w-8 h-8 rounded-md flex items-center justify-center shadow-md active:scale-90 transition-transform"><i class="fa-solid fa-paper-plane text-[10px]"></i></button>
                         </div>
-                        <div>
-                            <h3 class="font-bold text-slate-800 text-sm">Plaban Kumar Nath</h3>
-                            <p class="text-[11px] text-slate-400 font-semibold tracking-wide">30 MAR 2026</p>
-                        </div>
-                    </div>
-                    <button class="text-slate-300 hover:text-slate-500"><i class="fa-solid fa-ellipsis"></i></button>
-                </div>
-
-                <p class="text-slate-600 text-[15px] leading-relaxed mb-6 font-medium">
-                    Please share some interesting facts on <span class="text-blue-600 font-bold">#AWS</span>. Looking for some deep dives into S3 or Lambda!
-                </p>
-
-                <div class="flex items-center justify-between py-3 border-t border-slate-50">
-                    <div class="flex items-center gap-6">
-                        <button class="group flex items-center gap-2 text-slate-400 text-sm font-bold hover:text-red-500 transition-all">
-                            <i class="fa-regular fa-heart text-lg group-hover:scale-110 transition-transform"></i> 12
-                        </button>
-                        <button onclick="toggleComments()" class="group flex items-center gap-2 text-slate-400 text-sm font-bold hover:text-blue-600 transition-all">
-                            <i class="fa-regular fa-comment text-lg group-hover:scale-110 transition-transform"></i> 3
-                        </button>
-                    </div>
-                    <button class="text-slate-400 hover:text-blue-600"><i class="fa-regular fa-bookmark"></i></button>
-                </div>
-            </div>
-
-            <div id="commentSection" class="hidden-comments bg-slate-50/80 px-5 pb-5 space-y-5 pt-5 border-t border-slate-100">
-                
-                <div class="flex items-center gap-3 bg-white border border-slate-200 rounded-2xl p-1.5 pl-4 shadow-sm focus-within:border-blue-300 transition-colors">
-                    <input type="text" placeholder="Write a thoughtful comment..." class="bg-transparent w-full outline-none text-sm py-1 text-slate-600 font-medium">
-                    <button class="bg-blue-600 text-white w-9 h-9 rounded-xl flex items-center justify-center active:scale-90 transition-all shadow-md shadow-blue-100">
-                        <i class="fa-solid fa-arrow-up text-sm"></i>
-                    </button>
-                </div>
-                
-                <div class="space-y-4">
-                    <div class="flex gap-3">
-                        <div class="w-8 h-8 rounded-full bg-orange-500 text-white flex-shrink-0 flex items-center justify-center font-bold text-[10px] shadow-sm">JD</div>
-                        <div class="flex-1">
-                            <div class="bg-white border border-slate-100 rounded-2xl rounded-tl-none p-3 shadow-sm">
-                                <h4 class="font-bold text-xs text-slate-800">Jane Doe</h4>
-                                <p class="text-sm text-slate-600 mt-1 leading-snug">AWS has over 200 services globally. It's essentially the backbone of the modern web.</p>
+                        <div class="flex gap-3 items-start group">
+                            <div class="w-8 h-8 shrink-0 rounded bg-gradient-to-tr from-purple-400 to-purple-600 text-white flex items-center justify-center font-bold text-[10px] shadow-sm">RK</div>
+                            <div class="grow space-y-1">
+                                <div class="bg-slate-50 border border-slate-100 rounded-2xl rounded-tl-none p-3 transition-colors group-hover:bg-slate-100/50">
+                                    <div class="flex justify-between items-center mb-1">
+                                        <h5 class="font-bold text-[10px] text-slate-900 tracking-tight">RAHUL K</h5>
+                                        <span class="text-[9px] text-slate-400 font-medium tracking-tight">30m ago</span>
+                                    </div>
+                                    <p class="text-xs text-slate-600 leading-normal font-medium">Did they ask you to do it in-place or return a new list?</p>
+                                </div>
+                                <div class="flex gap-4 ml-1 text-[9px] font-bold text-slate-400 uppercase tracking-tighter">
+                                    
+                                </div>
                             </div>
-                            <p class="text-[10px] text-slate-400 mt-1 ml-1 font-bold">2H AGO • REPLY</p>
                         </div>
-                    </div>
-
-                    <div class="flex gap-3">
-                        <div class="w-8 h-8 rounded-full bg-emerald-500 text-white flex-shrink-0 flex items-center justify-center font-bold text-[10px] shadow-sm">SM</div>
-                        <div class="flex-1">
-                            <div class="bg-white border border-slate-100 rounded-2xl rounded-tl-none p-3 shadow-sm">
-                                <h4 class="font-bold text-xs text-slate-800">Steve Miller</h4>
-                                <p class="text-sm text-slate-600 mt-1 leading-snug">Fun fact: Amazon’s cloud business is more profitable than their retail business!</p>
-                            </div>
-                            <p class="text-[10px] text-slate-400 mt-1 ml-1 font-bold">1H AGO • REPLY</p>
-                        </div>
-                    </div>
+                    </section>
                 </div>
-            </div>
-        </div>
+            </article>
+        </section>
     </main>
 
-    <nav class="fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-md border-t border-slate-100 flex justify-around items-center px-2 py-3 shadow-[0_-10px_20px_rgba(0,0,0,0.02)] z-50">
-        <button class="relative flex flex-col items-center px-3 text-slate-400 hover:text-slate-600 transition-colors">
-            <i class="fa-solid fa-suitcase text-xl"></i>
-            <span class="text-[10px] mt-1 font-bold">Jobs</span>
-        </button>
-        <button class="relative flex flex-col items-center px-3 nav-active transition-colors">
-            <i class="fa-solid fa-comment-dots text-xl"></i>
-            <span class="text-[10px] mt-1 font-bold">QA</span>
-        </button>
-        <button class="relative flex flex-col items-center px-3 text-slate-400 hover:text-slate-600 transition-colors">
-            <i class="fa-solid fa-code text-xl"></i>
-            <span class="text-[10px] mt-1 font-bold">Hacks</span>
-        </button>
-        <button class="relative flex flex-col items-center px-3 text-slate-400 hover:text-slate-600 transition-colors">
-            <i class="fa-solid fa-book-open text-xl"></i>
-            <span class="text-[10px] mt-1 font-bold">Learn</span>
-        </button>
+    <nav class="fixed bottom-0 left-0 right-0 bg-white border-t border-slate-200 flex justify-around items-center py-2 shadow-2xl z-50">
+        <button class="flex flex-col items-center px-3 nav-active"><i class="fa-solid fa-suitcase text-lg"></i><span class="text-[9px] mt-1 font-bold uppercase">Experience</span></button>
+        <button class="flex flex-col items-center px-3 text-slate-400"><i class="fa-solid fa-comment-dots text-lg"></i><span class="text-[9px] mt-1 font-bold uppercase">QA</span></button>
+        <button class="flex flex-col items-center px-3 text-slate-400"><i class="fa-solid fa-building text-lg"></i><span class="text-[9px] mt-1 font-bold uppercase">Job</span></button>
+        <button class="flex flex-col items-center px-3 text-slate-400"><i class="fa-solid fa-code text-lg"></i><span class="text-[9px] mt-1 font-bold uppercase">Hacks</span></button>
+        <button class="flex flex-col items-center px-3 text-slate-400"><i class="fa-solid fa-book-open text-lg"></i><span class="text-[9px] mt-1 font-bold uppercase">Learn</span></button>
     </nav>
 
     <script>
-        function toggleComments() {
-            const section = document.getElementById('commentSection');
-            if (section.style.display === "block") {
-                section.style.display = "none";
+        function toggleComments(id) {
+            const el = document.getElementById(id);
+            if (!el) return;
+            if (el.style.display === "block") {
+                el.style.display = "none";
             } else {
-                section.style.display = "block";
+                el.style.display = "block";
             }
         }
     </script>
